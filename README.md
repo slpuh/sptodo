@@ -23,10 +23,10 @@ git clone https://github.com/slpuh/sptodo.git
 #### Запуск phpmyadmin
 
 ```
-http:// localhost:8000
+http://localhost:8000
 ```
 #### Запуск проекта
 
 ```
-http:// localhost:8001
+http://localhost:8001
 ```
