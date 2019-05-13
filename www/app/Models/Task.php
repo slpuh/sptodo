@@ -132,7 +132,7 @@ class Task
     //Проеверка заголовка на длину
     public static function checkTitle($title)
     {
-        if (strlen($title) >= 4 && strlen($title) <= 20) {
+        if (strlen($title) >= 4 || strlen($title) <= 20) {
             return true;
         }
         return false;
@@ -141,7 +141,7 @@ class Task
     //Проверка задачи на длину
     public static function checkTask($text)
     {
-        if (strlen($text) >= 10 && strlen($text) <= 300) {
+        if (strlen($text) >= 10 || strlen($text) <= 300) {
             return true;
         }
         return false;
