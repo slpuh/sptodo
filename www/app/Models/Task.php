@@ -132,7 +132,7 @@ class Task
     //Проеверка заголовка на длину
     public static function checkTitle($title)
     {
-        if (strlen($title) <= 4 || strlen($title) >= 20) {
+        if (strlen($title) <= 4 || strlen($title) >= 50) {
             return false;
         }
         return true;
