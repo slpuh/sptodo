@@ -2,7 +2,7 @@
 
 return [
     'host' => 'db',
-    'dbname' => 'myDb',
+    'dbname' => 'todo',
     'user' => 'user',
     'password' => 'test',            
 ];
