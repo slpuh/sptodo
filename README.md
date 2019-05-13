@@ -25,16 +25,16 @@ git clone https://github.com/slpuh/sptodo.git
 ```
 http://localhost:8000
 ```
-MYSQL_USER: user
-MYSQL_PASSWORD: test
-MYSQL_ROOT_PASSWORD: test
+MYSQL_USER: user  
+MYSQL_PASSWORD: test  
+MYSQL_ROOT_PASSWORD: test  
 
 #### Запуск проекта
 
 ```
 http://localhost:8001
 ```
-MYSQL_DATABASE: todo
-MYSQL_USER: user
-MYSQL_PASSWORD: test
-MYSQL_ROOT_PASSWORD: test
+MYSQL_DATABASE: todo  
+MYSQL_USER: user  
+MYSQL_PASSWORD: test  
+MYSQL_ROOT_PASSWORD: test  
