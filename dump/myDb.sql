@@ -45,7 +45,7 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (41,'Тест','Lorem ipsum Lorem ipsum Lorem ',30,0,'2019-05-11 14:03:46','2019-05-22 10:49:00',0),(57,'Сделать что то','ssssssssssss',30,41,'2019-05-12 09:13:36','2019-05-19 11:13:00',0),(58,'Сделать что то 5','aaaaaaaaaaaa',30,41,'2019-05-12 09:14:29','2019-05-17 11:14:00',0),(59,'Сделать что то 5','dddddddddddddddd',30,0,'2019-05-12 10:59:21','2019-05-23 10:59:00',0),(61,'Сделать что то','xxxxxxxxxxxxxxxxxxxxxxx',30,59,'2019-05-12 12:29:53','2019-05-22 12:29:00',0),(62,'Сделать что то','ssssssssssssssssss',30,41,'2019-05-12 12:31:59','2019-05-21 12:31:00',0),(67,'Сделать что то','sssssssssssssss',30,0,'2019-05-12 13:20:35','2019-05-13 13:20:00',0);
+INSERT INTO `tasks` VALUES (41,'Тест','Lorem ipsum Lorem ipsum Lorem ',30,0,'2019-05-11 14:03:46','2019-05-22 10:49:00',0),(57,'Сделать что то','Lorem ipsum',30,41,'2019-05-12 09:13:36','2019-05-19 11:13:00',0),(58,'Сделать что то 5','Lorem ipsum',30,41,'2019-05-12 09:14:29','2019-05-17 11:14:00',0),(59,'Сделать что то 3','Lorem ipsum',30,0,'2019-05-12 10:59:21','2019-05-23 10:59:00',0),(61,'Сделать что то 4','Lorem ipsum',30,59,'2019-05-12 12:29:53','2019-05-22 12:29:00',0),(62,'Сделать что то 7','Lorem ipsum',30,41,'2019-05-12 12:31:59','2019-05-21 12:31:00',0);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (30,'user','user@user.cc','$2y$10$UPY6337Sc4UK.6E4a3.yrOloA6xd6ohSDnclbbWhCBnljV6sT374y','2019-05-09 11:52:26'),(34,'user1','udj@ujd.dd','$2y$10$5imjxh1yFm8eGto/zmYuH.z/vZmksWvGbFTM.2J8PfPIju94.nq0u','2019-05-09 19:05:42'),(35,'user2','user2@user.cc','$2y$10$WeBz3seCccHmLlPtvEibA.QFupa20kdl8qK.MFMr5BF1QdvN69.G2','2019-05-10 09:18:43'),(36,'user3','user3@user.cc','$2y$10$72HxWcy0b.lc8Cv.4F9yC.tVpDpGREgptPUc3wPZT0g.FjVsZx6XK','2019-05-10 09:20:57'),(37,'user4','user4@user.cc','$2y$10$pXCZGWVZsMFm9zgiRWhTlOcbHNhIV9FZgvVxUJcBm6TcO61H8HJJ6','2019-05-10 09:23:42'),(38,'user6','user6@user.cc','$2y$10$wyu3Jx1xc9pLzFEk50EHsuGi2BlSMNFC2ryct2L6d4oQbzM6ZWY/G','2019-05-10 09:26:10'),(39,'user7','user7@user.cc','$2y$10$i65soIU0epv76CvZPOHfNODju7JesUvaUlihkShVlTkAbncE0qRDS','2019-05-10 09:53:54'),(40,'user8','user8@user.cc','$2y$10$TwqN4lYbZOr/eEKbuVyF/.L7MQOObCDw6X5o.5PbEf4WqP03Jr8kG','2019-05-10 09:54:47'),(41,'user9','user9@user.cc','$2y$10$W9xaCv4CVToN/uwoMPFituHEwBqKoKtyFFAQmYTOK5N64L1p4zVTm','2019-05-10 10:03:57'),(42,'user10','user10@user.cc','$2y$10$9KxcL2CXZGgNY8IvXQ8Aje5jNVVoh9vfxQVSbz1yTAWQk9TzaHfdS','2019-05-10 10:07:59'),(43,'user11','user11@user.cc','$2y$10$jwiYaLLPafIOo8dgZHxehufUwGDVFJqoovUaGFf9b3RhZMfRHf4pu','2019-05-10 10:14:05'),(44,'user12','user12@user.cc','$2y$10$846DiXbiG.jN.xPaS76hcOALw.xUsnkdHHbQSmfkRpsdxh.DU.emW','2019-05-10 10:16:58'),(45,'user13','user13@user.cc','$2y$10$KTBkfOr3CDTfgRnLShbPpO7gi1y1t09DGuF2H8ZL21ot0VYd4yKjK','2019-05-10 10:22:05'),(46,'user15','user15@user.cc','$2y$10$Mzvm47KXcn1x.0qIotrvt.6FA5Hk8ZVs5Z/QbDP8ijAl0.51gqWxm','2019-05-11 07:19:07'),(47,'user125','user125@user.cc','$2y$10$LswuiANps.rFvKqAyMhQ/OzApRjGVxj6BvVEYXVZIwGNIy1vFZ1m6','2019-05-11 21:39:33');
+INSERT INTO `users` VALUES (30,'user','user@user.cc','$2y$10$UPY6337Sc4UK.6E4a3.yrOloA6xd6ohSDnclbbWhCBnljV6sT374y','2019-05-09 11:52:26'),(34,'user1','udj@ujd.dd','$2y$10$5imjxh1yFm8eGto/zmYuH.z/vZmksWvGbFTM.2J8PfPIju94.nq0u','2019-05-09 19:05:42'),(35,'user2','user2@user.cc','$2y$10$WeBz3seCccHmLlPtvEibA.QFupa20kdl8qK.MFMr5BF1QdvN69.G2','2019-05-10 09:18:43'),(36,'user3','user3@user.cc','$2y$10$72HxWcy0b.lc8Cv.4F9yC.tVpDpGREgptPUc3wPZT0g.FjVsZx6XK','2019-05-10 09:20:57'),(37,'user4','user4@user.cc','$2y$10$pXCZGWVZsMFm9zgiRWhTlOcbHNhIV9FZgvVxUJcBm6TcO61H8HJJ6','2019-05-10 09:23:42'),(38,'user6','user6@user.cc','$2y$10$wyu3Jx1xc9pLzFEk50EHsuGi2BlSMNFC2ryct2L6d4oQbzM6ZWY/G','2019-05-10 09:26:10'),(39,'user7','user7@user.cc','$2y$10$i65soIU0epv76CvZPOHfNODju7JesUvaUlihkShVlTkAbncE0qRDS','2019-05-10 09:53:54'),(40,'user8','user8@user.cc','$2y$10$TwqN4lYbZOr/eEKbuVyF/.L7MQOObCDw6X5o.5PbEf4WqP03Jr8kG','2019-05-10 09:54:47'),(41,'user9','user9@user.cc','$2y$10$W9xaCv4CVToN/uwoMPFituHEwBqKoKtyFFAQmYTOK5N64L1p4zVTm','2019-05-10 10:03:57'),(42,'user10','user10@user.cc','$2y$10$9KxcL2CXZGgNY8IvXQ8Aje5jNVVoh9vfxQVSbz1yTAWQk9TzaHfdS','2019-05-10 10:07:59'),(43,'user11','user11@user.cc','$2y$10$jwiYaLLPafIOo8dgZHxehufUwGDVFJqoovUaGFf9b3RhZMfRHf4pu','2019-05-10 10:14:05'),(44,'user12','user12@user.cc','$2y$10$846DiXbiG.jN.xPaS76hcOALw.xUsnkdHHbQSmfkRpsdxh.DU.emW','2019-05-10 10:16:58'),(45,'user13','user13@user.cc','$2y$10$KTBkfOr3CDTfgRnLShbPpO7gi1y1t09DGuF2H8ZL21ot0VYd4yKjK','2019-05-10 10:22:05'),(46,'user15','user15@user.cc','$2y$10$Mzvm47KXcn1x.0qIotrvt.6FA5Hk8ZVs5Z/QbDP8ijAl0.51gqWxm','2019-05-11 07:19:07'),(47,'user125','user125@user.cc','$2y$10$LswuiANps.rFvKqAyMhQ/OzApRjGVxj6BvVEYXVZIwGNIy1vFZ1m6','2019-05-11 21:39:33'),(48,'user85','user85@user.cc','$2y$10$R/U7ML2lNkc3ZF5xWtYzreytg9nLRXTEDAdvHuqXOh3WoI48070KS','2019-05-13 06:58:31');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -87,4 +87,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-13  6:44:09
+-- Dump completed on 2019-05-13  6:59:42
