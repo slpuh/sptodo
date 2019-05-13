@@ -91,7 +91,7 @@ class User
     //Проверка длины логина при регистрации
     public static function checkName($name)
     {
-        if (strlen($name) >= 4  && strlen($name) <= 20) {
+        if (strlen($name) >= 4  || strlen($name) <= 20) {
             return true;
         }
         return false;
@@ -100,7 +100,7 @@ class User
     //Проверка длины пароля при авторизации/регистрации
     public static function checkPassword($password)
     {
-        if (strlen($password) >= 6 && strlen($password) <= 20) {
+        if (strlen($password) >= 6 || strlen($password) <= 20) {
             return true;
         }
         return false;
