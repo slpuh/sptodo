@@ -91,19 +91,19 @@ class User
     //Проверка длины логина при регистрации
     public static function checkName($name)
     {
-        if (strlen($name) >= 4  || strlen($name) <= 20) {
-            return true;
+        if (strlen($name) <= 4  || strlen($name) >= 20) {
+            return false;
         }
-        return false;
+        return true;
     }    
 
     //Проверка длины пароля при авторизации/регистрации
     public static function checkPassword($password)
     {
-        if (strlen($password) >= 6 || strlen($password) <= 20) {
-            return true;
+        if (strlen($password) <= 6 || strlen($password) >= 20) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     //Проверка длины email при авторизации/регистрации

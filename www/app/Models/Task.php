@@ -132,19 +132,19 @@ class Task
     //Проеверка заголовка на длину
     public static function checkTitle($title)
     {
-        if (strlen($title) >= 4 || strlen($title) <= 20) {
-            return true;
+        if (strlen($title) <= 4 || strlen($title) >= 20) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     //Проверка задачи на длину
     public static function checkTask($text)
     {
-        if (strlen($text) >= 10 || strlen($text) <= 300) {
-            return true;
+        if (strlen($text) <= 10 || strlen($text) >= 300) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     //Проверка заполнения поля дата
