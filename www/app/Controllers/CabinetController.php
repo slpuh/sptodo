@@ -77,7 +77,7 @@ class CabinetController extends BaseController
 
 
             if (!Task::checkTitle($title)) {
-                $errors[] = 'Title field must contain at least 4 characters and maximum 20';
+                $errors[] = 'Title field must contain at least 4 characters and maximum 50';
             }
 
             if (!Task::checkTask($text)) {
