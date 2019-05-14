@@ -23,8 +23,8 @@ class Task
             if (strtotime($dateNow) >= strtotime($task['finish'])) {
                 self::closeTask($task['id']);
             }
-        }   
-        
+        }
+
         return $tasks;
     }
 
@@ -194,14 +194,16 @@ class Task
         $result->bindParam(':taskId', $taskId, PDO::PARAM_INT);
         $result->execute();
         $subTasks = $result->fetchAll();
-
-        foreach ($subTasks as $subTask) {
-            $subTaskFinish = $subTask['finish'];
-            if (strtotime($subTaskFinish) <= strtotime($finish)) {
-                return true;
+        
+        if (!empty($subTasks)) {
+            foreach ($subTasks as $subTask) {
+                $subTaskFinish = $subTask['finish'];
+                if (strtotime($subTaskFinish) >= strtotime($finish)) {
+                    return false;
+                }
             }
-            return false;
         }
+        return true;
     }
     //Получение Id родителя
     public static function getParentId($taskId)
@@ -229,10 +231,10 @@ class Task
         $result = $db->prepare($sql);
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         $result->bindParam(':taskId', $taskId, PDO::PARAM_INT);
-        $result->execute(); 
+        $result->execute();
 
-       $parentId = self::getParentId($taskId);
-       
+        $parentId = self::getParentId($taskId);
+
         if ($parentId['parent_id'] != 0) {
             $sql = 'SELECT * FROM tasks WHERE parent_id = :subTasks';
             $result = $db->prepare($sql);
@@ -240,20 +242,19 @@ class Task
             $result->execute();
             $subTasks = $result->fetchAll();
 
-            
             foreach ($subTasks as $subTask) {
                 if ($subTask['status'] == 1) {
                     $a[] = $subTask['status'];
                 }
             }
-         }
-        
+        }
+
         if (empty($a) && $parentId['parent_id'] != 0) {
-                $sql = 'UPDATE tasks SET status = :status WHERE id = :taskId';
-                $result = $db->prepare($sql);
-                $result->bindParam(':status', $status, PDO::PARAM_INT);
-                $result->bindParam(':taskId', $parentId['parent_id'], PDO::PARAM_INT);
-                $result->execute();        
-     }
+            $sql = 'UPDATE tasks SET status = :status WHERE id = :taskId';
+            $result = $db->prepare($sql);
+            $result->bindParam(':status', $status, PDO::PARAM_INT);
+            $result->bindParam(':taskId', $parentId['parent_id'], PDO::PARAM_INT);
+            $result->execute();
+        }
     }
 }

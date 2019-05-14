@@ -77,7 +77,7 @@ class CabinetController extends BaseController
 
 
             if (!Task::checkTitle($title)) {
-                $errors[] = 'Title field must contain at least 4 characters and maximum 50';
+                $errors[] = 'Title field must contain at least 4 characters and maximum 20';
             }
 
             if (!Task::checkTask($text)) {
@@ -137,16 +137,18 @@ class CabinetController extends BaseController
                 $errors[] = 'Tasks can only be installed in the future';
             }
 
-             if ($task['parent_id'] != 0) {
-                $parentId = $task['parent_id'];
+            if ($task['parent_id'] != 0) {
+
+                $parentId = $task['parent_id'];                
+
                 if (!Task::checkSubFinishDate($finish, $parentId)) {
                     $errors[] = 'The subtask can not be later than the task';
-                }
-            } else {
-                if (!Task::checkParentTaskFinishDate($finish, $taskId)) {
-                    $errors[] = 'Task cannot be completed before subtask';
-                }
-            }   
+                }                
+            }
+            
+            if (!Task::checkParentTaskFinishDate($finish, $taskId)) {           
+                $errors[] = 'Task cannot be completed before subtask';
+            }
 
             if (empty($errors)) {
                 Task::editTask($taskId, $title, $text, $finish);
@@ -162,7 +164,7 @@ class CabinetController extends BaseController
     public function closeTask()
     {
         $taskId = Task::getTaskId();
-        
+
         Task::closeTask($taskId);
         header("Location: /cabinet");
     }
