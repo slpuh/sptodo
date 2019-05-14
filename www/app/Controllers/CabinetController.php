@@ -137,16 +137,16 @@ class CabinetController extends BaseController
                 $errors[] = 'Tasks can only be installed in the future';
             }
 
-            if ($task['parent_id'] != 0) {
+             if ($task['parent_id'] != 0) {
                 $parentId = $task['parent_id'];
                 if (!Task::checkSubFinishDate($finish, $parentId)) {
                     $errors[] = 'The subtask can not be later than the task';
-                }                 
+                }
             } else {
                 if (!Task::checkParentTaskFinishDate($finish, $taskId)) {
                     $errors[] = 'Task cannot be completed before subtask';
                 }
-            }            
+            }   
 
             if (empty($errors)) {
                 Task::editTask($taskId, $title, $text, $finish);
